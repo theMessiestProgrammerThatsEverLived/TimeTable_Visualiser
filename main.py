@@ -4,13 +4,11 @@ from datetime import datetime
 
 
 def parse_time(time_str):
-    """Convert 'HH:MM AM/PM' to minutes since midnight."""
-    dt = datetime.strptime(time_str, "%I:%M %p")
+    dt = datetime.strptime(time_str, "%H:%M")
     return dt.hour * 60 + dt.minute
 
 
 def visualize_timetable(courseTile, days=None, title="Class Timetable", filename=None):
-    """Draws a timetable with days and rectangles centered between grid lines."""
 
     if days is None:
         days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -21,8 +19,8 @@ def visualize_timetable(courseTile, days=None, title="Class Timetable", filename
         c["end_min"] = parse_time(c["end"])
 
     # Time range: 7:30 AM → 5:30 PM
-    start_day_min = parse_time("7:30 AM")
-    end_day_min = parse_time("5:30 PM")
+    start_day_min = parse_time("7:30")
+    end_day_min = parse_time("17:30")
 
     ax = plotSetup(days, start_day_min, end_day_min)
 
@@ -91,15 +89,6 @@ def plotSetup(days, start_day_min, end_day_min):
     return ax
 
 
-'''courses = [
-    {"day": "Monday", "start": "8:30 AM", "end": "9:30 AM", "code": "CSE101"},
-    {"day": "Monday", "start": "12:30 PM", "end": "1:30 PM", "code": "CSE101"},
-    {"day": "Wednesday", "start": "1:00 PM", "end": "2:30 PM", "code": "MTH102"},
-    {"day": "Saturday", "start": "9:30 AM", "end": "11:00 AM", "code": "PHY103"},
-    {"day": "Monday", "start": "10:00 AM", "end": "11:30 AM", "code": "MTH102"},  # Same course as Wednesday
-]'''
-
-
 def inputPhrasing():
     data = list()
     while True:
@@ -115,7 +104,7 @@ def inputPhrasing():
                 break
 
             dataGroup = dict()
-            dataGroup["day"] = daysNTimes[0].strip()
+            dataGroup["day"] = daysNTimes[0].strip().capitalize()
             dataGroup["start"] = daysNTimes[1].strip()
             dataGroup["end"] = daysNTimes[2].strip()
             dataGroup["code"] = courseName.strip()
