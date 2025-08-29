@@ -20,3 +20,24 @@ def inputPhrasing():
             data.append(dataGroup)
 
     return data
+
+
+def camuPhrasing():
+    data = list()
+    rawData = list()
+    blockData = list()
+
+    with open('data.txt') as dataFile:
+        rawData.append(blocks for blocks in dataFile.read().split('--|--'))
+
+    blockData.append(block.split('\n') for block in rawData)
+
+    for i in blockData: i.pop(1)
+
+    for info in blockData:
+        course = info[0][0].split(' - ')[0].strip()
+
+
+
+
+camuPhrasing()
