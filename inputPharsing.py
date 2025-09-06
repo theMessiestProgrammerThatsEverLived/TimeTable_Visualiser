@@ -28,11 +28,17 @@ def camuPhrasing():
     blockData = list()
 
     with open('data.txt') as dataFile:
-        rawData.append(blocks for blocks in dataFile.read().split('--|--'))
+        for block in dataFile.read().split('--|--'):
+            rawData.append(block)
 
-    blockData.append(block.split('\n') for block in rawData)
+        # rawData.append(blocks for blocks in dataFile.read().split('--|--'))
 
-    for i in blockData: i.pop(1)
+    for blocks in rawData:
+        blockData.append(blocks.split('\n'))
+
+    print(blockData)
+    '''for i in blockData:
+        i.pop(1)'''
 
     for info in blockData:
         course = info[0][0].split(' - ')[0].strip()
