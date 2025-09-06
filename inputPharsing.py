@@ -22,6 +22,30 @@ def inputPhrasing():
     return data
 
 
+def dayPhrasing(rawData):
+    timings = rawData.split(" - ")
+    processedTime = list()
+    pairs = list()
+    for time in timings:
+        if len(time) == 5:
+            processedTime.append(time)
+
+        else:
+            time1 = time[:5]
+            time2 = time[5:]
+            if time1 == time2:
+                continue
+            else:
+                processedTime.append(time1)
+                processedTime.append(time2)
+
+    for index, time in enumerate(processedTime):
+        if index%2 == 0:
+            pairs.append([processedTime[index], processedTime[index+1]])
+
+    return pairs
+
+
 def camuPhrasing():
     data = list()
     rawData = list()
@@ -34,14 +58,33 @@ def camuPhrasing():
         # rawData.append(blocks for blocks in dataFile.read().split('--|--'))
 
     for blocks in rawData:
-        blockData.append(blocks.split('\n'))
+        blockData.append(blocks.strip().split('\n'))
+
+    for i in blockData:
+        i.pop(1)
 
     print(blockData)
-    '''for i in blockData:
-        i.pop(1)'''
 
     for info in blockData:
-        course = info[0][0].split(' - ')[0].strip()
+        course = info[0].split(' - ')[0].strip()
+        info.pop(0)
+        print(course)
+
+        for rawDay in info:
+            day, rawTime =  rawDay.strip().split(': ')
+            refinedTime = dayPhrasing(rawTime)
+            for timingsPairs in refinedTime:
+                dataGroup = dict()
+                dataGroup["day"] = day
+                dataGroup["start"] = timingsPairs[0]
+                dataGroup["end"] = timingsPairs[1]
+                dataGroup["code"] = course
+                data.append(dataGroup)
+
+    return data
+
+
+
 
 
 
