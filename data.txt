@@ -1,20 +1,32 @@
-4C4-1, Maths - NEW_MATHS1
+4B5-2, PHYSICS - Vinoth Kumar P
 Date: 25-08-2025 to 18-10-2025
-Friday: 13:00 - 14:0014:00 - 15:00
+Monday: 08:00 - 09:0009:00 - 10:00
 Thursday: 13:00 - 14:0014:00 - 15:00
-Tuesday: 13:00 - 14:0014:00 - 15:0015:00 - 16:0016:00 - 17:00
---|--
-4B2-2 PHYSICS - Vinoth Kumar P
+Tuesday: 15:00 - 16:0016:00 - 17:00
+
+4B2-2, PHYSICS - Vinoth Kumar P
 Date: 25-08-2025 to 18-10-2025
 Monday: 15:00 - 16:0016:00 - 17:00
 Saturday: 10:00 - 11:0011:00 - 12:0013:00 - 14:0014:00 - 15:00
---|--
-4D1-5 CHEMISTRY - SHANTHI S
+
+4B6-2, ENGLISH - Pariventhan K
+Date: 25-08-2025 to 18-10-2025
+Thursday: 15:00 - 16:0016:00 - 17:00
+Tuesday: 08:00 - 09:0009:00 - 10:00
+
+4D1-5, CHEMISTRY - SHANTHI S
 Date: 25-08-2025 to 18-10-2025
 Monday: 13:00 - 14:0014:00 - 15:00
 Wednesday: 10:00 - 11:0011:00 - 12:00
---|--
-4B1-2, ENGLISH - KIRAN KUMAR J
+
+4A4-1, Maths - Rajaraman R
 Date: 25-08-2025 to 18-10-2025
-Friday: 10:00 - 11:0011:00 - 12:00
-Thursday: 10:00 - 11:0011:00 - 12:00
+Friday: 08:00 - 09:0009:00 - 10:00
+Monday: 08:00 - 09:0009:00 - 10:0015:00 - 16:0016:00 - 17:00
+Saturday: 15:00 - 16:0016:00 - 17:00
+
+4A5-3, Maths - Rajaraman R
+Date: 25-08-2025 to 18-10-2025
+Saturday: 10:00 - 11:0011:00 - 12:00
+Thursday: 10:00 - 11:0011:00 - 12:0015:00 - 16:0016:00 - 17:00
+Wednesday: 15:00 - 16:0016:00 - 17:00
