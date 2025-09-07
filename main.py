@@ -1,4 +1,4 @@
 from modules import visualize_timetable
-from inputPharsing import inputPhrasing
+from inputPharsing import camuPhrasing
 
-visualize_timetable(inputPhrasing(), filename="timetable.png")
+visualize_timetable(camuPhrasing(), filename="timetable.png")
