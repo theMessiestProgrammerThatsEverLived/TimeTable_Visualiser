@@ -3,9 +3,12 @@ import matplotlib.patches as patches
 from datetime import datetime
 
 
-def parse_time(time_str):
-    dt = datetime.strptime(time_str, "%H:%M")
-    return dt.hour * 60 + dt.minute
+def parse_time(time_str, choice=True):
+    if choice:
+        dt = datetime.strptime(time_str, "%H:%M")
+        return dt.hour * 60 + dt.minute
+    else:
+        return datetime.strptime(time_str, "%H:%M").strftime('%H%M')
 
 
 def visualize_timetable(courseTile, days=None, title="Class Timetable", filename=None):
@@ -87,3 +90,21 @@ def plotSetup(days, start_day_min, end_day_min):
     ax.grid(True, which='minor', axis='x', linestyle='-', alpha=0.7)
 
     return ax
+
+def phraseBlocks(blocks):
+    for i in blocks:
+        print(f'{i}: ', end='\n\t')
+        for j in blocks[i]:
+            print(f'{j}: {blocks[i][j]}', end='\n\t')
+        print('')
+
+
+def checkConflicts(days, checkDays):
+    for day in days:
+        if day in checkDays:
+            for timing in days[day]:
+                if int(parse_time(timing[0], False)) == int(parse_time(timing["end"])):
+                    pass
+
+
+

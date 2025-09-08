@@ -1,4 +1,9 @@
-from modules import visualize_timetable
+from modules import visualize_timetable, phraseBlocks
 from inputPharsing import camuPhrasing
 
-visualize_timetable(camuPhrasing(), filename="timetable.png")
+data, blockTimings = camuPhrasing()
+
+phraseBlocks(blockTimings)
+
+if input('go/noGo?: ').lower() == 'go':
+    visualize_timetable(data)
