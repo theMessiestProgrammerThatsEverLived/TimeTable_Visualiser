@@ -91,7 +91,9 @@ def plotSetup(days, start_day_min, end_day_min):
 
     return ax
 
+
 def phraseBlocks(blocks):
+    print(blocks)
     for i in blocks:
         print(f'{i}: ', end='\n\t')
         for j in blocks[i]:
@@ -99,12 +101,18 @@ def phraseBlocks(blocks):
         print('')
 
 
-def checkConflicts(days, checkDays):
-    for day in days:
-        if day in checkDays:
-            for timing in days[day]:
-                if int(parse_time(timing[0], False)) == int(parse_time(timing["end"])):
-                    pass
+def checkConflicts(key, givenList):
+    fullList = givenList.copy()
+    finalList = fullList.copy()
+    checkDict = fullList[key]
+    del fullList[key]
 
+    print(fullList)
+    for keys in checkDict:
+        for i in fullList:
+            if keys in fullList[i]:
+                for priTime in givenList[key][keys]:
+                    if priTime in fullList[i][keys]:
+                        del finalList[i]
 
-
+    return finalList

@@ -50,7 +50,7 @@ def camuPhrasing():
     data = list()
     rawData = list()
     blockData = list()
-    summarizedData = dict()
+    chamitha = dict()
 
     with open('data.txt') as dataFile:
         for block in dataFile.read().split('\n\n'):
@@ -66,11 +66,12 @@ def camuPhrasing():
     for info in blockData:
         course = info[0].split(' - ')[0].strip()
         info.pop(0)
-        courseTiming = dict()
+        courseTimes = dict()
         for rawDay in info:
             day, rawTime =  rawDay.strip().split(': ')
             refinedTime = dayPhrasing(rawTime)
-            courseTiming[day] = refinedTime
+            print(refinedTime)
+            courseTimes[day] = refinedTime
             for timingsPairs in refinedTime:
                 dataGroup = dict()
                 dataGroup["day"] = day
@@ -78,6 +79,6 @@ def camuPhrasing():
                 dataGroup["end"] = timingsPairs[1]
                 dataGroup["code"] = course
                 data.append(dataGroup)
-        summarizedData[course] = courseTiming
+        chamitha[course] = courseTimes
 
-    return data, summarizedData
+    return data, chamitha
